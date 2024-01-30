@@ -1,0 +1,21 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+};
+// Fully encapsulated class as all the member function are private 
+class Animal
+{
+    int a;
+    char ch;
+};
+int main()
+{
+
+    return 0;
+}
