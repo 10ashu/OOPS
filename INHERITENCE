@@ -1,0 +1,90 @@
+1. Single Level Inheritance
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Speaking"<<endl;
+    }
+};
+class Dog : public Animmal
+{
+    
+};
+2.Multilevel Inheritance
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Speaking"<<endl;
+    }
+};
+class Dog : public Animmal
+{
+    
+};
+class Cat: public Dog{
+    
+};
+3. Multiple Inheritance
+class Dog 
+{
+    public:
+    void A()
+    {
+        cout<<"Calling A"<<endl;
+    }
+
+};
+class Cat{
+    public:
+    void B()
+    {
+        cout<<"Calling B"<<endl;
+    }
+};
+class Multiple: public Cat,public Dog{
+
+};
+4. Heirarichal Inheritence
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Speaking"<<endl;
+    }
+};
+
+class Dog :public Animmal
+{
+    public:
+    void A()
+    {
+        cout<<"Calling A"<<endl;
+    }
+
+};
+class Cat :public Animmal
+{
+    public:
+    void B()
+    {
+        cout<<"Calling B"<<endl;
+    }
+};
+5. Hybrid Inheritance
+It is the combination of one and more type of inheritance for example SingleInheritance + MultipleInheritance
