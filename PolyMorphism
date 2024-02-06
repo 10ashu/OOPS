@@ -1,0 +1,216 @@
+1.Compile Time Polymorphism
+
+
+A.Function Overloading
+class Poly
+{
+    public:
+    int sum(int a,int b)
+    {
+        return a+b;
+    }
+    int sum(int a,int b,int c)
+    {
+        return a+b+c;
+    }
+};
+int main()
+{
+    
+Poly Functionoverloading;
+int c=Functionoverloading.sum(1,2);
+cout<<c<<endl;
+int d=Functionoverloading.sum(2,3,4);
+cout<<d<<endl;
+    return 0;
+}
+
+
+
+
+B.Operator Overloading
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Speaking"<<endl;
+    }
+};
+
+class Dog :public Animmal
+{
+    public:
+    void A()
+    {
+        cout<<"Calling A"<<endl;
+    }
+
+};
+class Cat :public Animmal
+{
+    public:
+    void B()
+    {
+        cout<<"Calling B"<<endl;
+    }
+};
+class Poly
+{
+    public:
+    int val;
+    int sum(int a,int b)
+    {
+        return a+b;
+    }
+    int sum(int a,int b,int c)
+    {
+        return a+b+c;
+    }
+    void operator+(Poly &obj)
+    {
+      int val1=this->val;
+      int val2=obj.val;
+      cout<<val2-val1<<endl;
+    }
+};
+int main()
+{
+    
+Poly Functionoverloading;
+int c=Functionoverloading.sum(1,2);
+cout<<c<<endl;
+int d=Functionoverloading.sum(2,3,4);
+cout<<d<<endl;
+Poly A,B;
+A.val=5;
+B.val=10;
+A+B;
+    return 0;
+}
+2. Run Time PolyMorphism
+A.Function Overriding
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Calling Animal"<<endl;
+    }
+};
+
+class Dog :public Animmal
+{
+    public:
+    void speak()
+    {
+        cout<<"Calling Dog"<<endl;
+    }
+
+};
+
+int main()
+{
+    Dog D;
+    D.speak();
+
+    return 0;
+}
+B. Virtual Keyword
+
+#include<bits/stdc++.h>
+using namespace std;
+class Animmal{
+    int data;
+    public:
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    virtual void speak()
+    {
+        cout<<"Calling Animal"<<endl;
+    }
+};
+
+class Dog :public Animmal
+{
+    public:
+    void  speak()
+    {
+        cout<<"Calling Dog"<<endl;
+    }
+
+};
+
+int main()
+{
+    Animmal* A=new Dog();
+    A->speak();
+    
+       
+    return 0;
+}
+// In case of Function overriding jiska pointer hoga uska function call hoga in case of casting
+// But in case of Constructor, it all depends on the type of object,that's constructor will be called if it is for child then parent and child both will be called and if it is for parent then the parent will only be called
+
+
+
+#include<bits/stdc++.h>
+using namespace std;
+class Animmal{
+    int data;
+    public:
+    Animmal()
+    {
+        cout<<"Animmal Constructor Called"<<endl;
+    }
+    void eat()
+    {
+        cout<<"Eating"<<endl;
+    }
+    void speak()
+    {
+        cout<<"Calling Animal"<<endl;
+    }
+};
+
+class Dog :public Animmal
+{
+    public:
+    Dog()
+    {
+        cout<<"Dog Constructor Called"<<endl;
+    }
+    void  speak()
+    {
+        cout<<"Calling Dog"<<endl;
+    }
+
+};
+
+int main()
+{
+ //   Animmal* A =new Animmal();
+   // Animmal* A=new Dog();
+   // Dog d;
+   Dog* D=(Dog*)new Animmal();
+    return 0;
+}
