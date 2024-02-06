@@ -1,0 +1,49 @@
+#include<bits/stdc++.h>
+using namespace std;
+class Animal{
+    public:
+    int age;
+    int weight;
+    // Default Constructor
+    Animal()
+    {
+       cout<<"Default Constructor Called"<<endl;
+    }
+    // Parameterized Constructor
+    Animal(int age,int weight)
+    {
+        this->age=age;
+        this->weight=weight;
+    }
+    // Copy Constructor
+    Animal(Animal* &obj)
+    {
+        this->age=obj->age;
+        this->weight=obj->weight;
+    }
+    void print()
+    {
+        cout<<this->age<<endl;
+        cout<<this->weight<<endl;
+    }
+// Destructor Called
+    ~Animal()
+    {
+        cout<<"Destructor Called"<<endl;
+    }
+};
+int main()
+{
+  Animal* A=new Animal;
+  Animal* B=new Animal(12,40);
+  B->print();
+  A=B;
+  A->print();
+  A->age=1;
+  cout<<"after Changing"<<endl;
+  A->print();
+  B->print();
+delete A;
+delete B;
+    return 0;
+}
