@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  
+  //1. String to integer
+   string s="123";
+   int n=stoi(s);
+   cout<<n<<endl;
+
+
+  // 2.Integer to string
+  s=to_string(n);
+  cout<<s<<endl;
+  // 3.char to string
+  char ch='a';
+  string s1;
+  s1+=ch;
+   cout<<s1<<endl;
+  //4.string to char
+ // index se
+  //5.int to char
+    char cas=s[0];
+    cout<<cas<<endl;
+  // 6.char to int
+  char aks='5';
+  int nn= aks-'0';
+  cout<<nn<<endl;
+
+    return  0;
+}
